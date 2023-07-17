@@ -1,0 +1,13 @@
+        if(head==NULL)
+        return NULL;
+        ListNode *p=head;
+        ListNode *q=head->next;
+        ListNode *r=head->next;
+        while(q && q->next){
+            p->next=p->next->next;
+            p=p->next;
+            q->next=q->next->next;
+            q=q->next;
+        }
+        p->next=r;
+        return head;
